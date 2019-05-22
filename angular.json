@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "markdown-editor": {
+      "root": "projects/markdown-editor",
+      "sourceRoot": "projects/markdown-editor/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/markdown-editor/tsconfig.lib.json",
+            "project": "projects/markdown-editor/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/markdown-editor/src/test.ts",
+            "tsConfig": "projects/markdown-editor/tsconfig.spec.json",
+            "karmaConfig": "projects/markdown-editor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/markdown-editor/tsconfig.lib.json",
+              "projects/markdown-editor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "material-markdown-editor"
